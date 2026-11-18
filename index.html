@@ -103,19 +103,26 @@ html[data-input=touch] body[data-travel=foot] .meter{bottom:calc(var(--bottom) +
 .liverySaveRow{grid-column:1/-1}.liveryForm .saveLivery{background:#edaf83;color:#302822;border-color:transparent}
 .liveryStatus{font-size:12px;color:#d9deb0}
 @media(max-width:650px){.liveryForm{grid-template-columns:1fr}.liveryForm button,.stickerPicker{min-height:44px}.liveryEditor summary{min-height:44px}.liveryEditor{margin-top:10px}}
+
+.toolbar #market{font-size:13px;font-weight:750;width:48px;border-radius:24px}
+#touchArm{grid-column:1;grid-row:1}
+body[data-travel=ride] #touchStrike{grid-column:1;grid-row:1}
+.marketBalance{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-block:1px solid #ffffff26;color:#aee5cf;font-weight:700}
+.marketItem{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;gap:5px 12px;width:100%;padding:15px 10px;background:transparent;border:0;border-bottom:1px solid #ffffff22;color:#fff1d9}
+.marketItem small{grid-column:1;color:#c9c7bf}.marketItem b{grid-area:1/2/3/3;color:#ffbb8b}.marketItem:disabled{opacity:.49}.marketItem:hover:enabled{background:#ffffff0c}
 </style></head>
 <body data-screen="menu">
 <canvas id="world" aria-label="GTA AI 版三维开放世界"></canvas><div class="shade"></div>
-<header><div class="brand"><svg viewBox="0 0 47 35" width="45" height="36" aria-hidden="true"><g fill="currentColor"><path d="M4 19a17 17 0 0 1 34 0zM1 22h43l-3 3H4zm5 6h32l-4 3H10z"/><path d="m23 13 8-7-4 9z" fill="#22202d"/></g></svg><span>SOLANA <b>INTERACTIVE</b></span></div><div class="toolbar"><button id="sound" title="电台声音" aria-label="开启电台" aria-pressed="false">♫</button><button id="full" title="全屏" aria-label="全屏">⛶</button><button id="view" class="onlyplay" aria-label="切换视角">视角</button><button id="garage" class="onlyplay" title="私人车库 (U)" aria-label="私人车库">车库</button><button id="pause" class="onlyplay" title="暂停" aria-label="暂停">Ⅱ</button></div></header>
+<header><div class="brand"><svg viewBox="0 0 47 35" width="45" height="36" aria-hidden="true"><g fill="currentColor"><path d="M4 19a17 17 0 0 1 34 0zM1 22h43l-3 3H4zm5 6h32l-4 3H10z"/><path d="m23 13 8-7-4 9z" fill="#22202d"/></g></svg><span>SOLANA <b>INTERACTIVE</b></span></div><div class="toolbar"><button id="sound" title="电台声音" aria-label="开启电台" aria-pressed="false">♫</button><button id="full" title="全屏" aria-label="全屏">⛶</button><button id="view" class="onlyplay" aria-label="切换视角">视角</button><button id="market" class="onlyplay" title="便利店 (B)" aria-label="便利店">商店</button><button id="garage" class="onlyplay" title="私人车库 (U)" aria-label="私人车库">车库</button><button id="pause" class="onlyplay" title="暂停" aria-label="暂停">Ⅱ</button></div></header>
 <main id="menu"><div class="titleblock"><div class="kicker"><i></i> 开放世界动作游戏</div><h1><span>GTA</span> <em>AI 版</em></h1><div class="actions"><button class="primary" id="start" disabled><span class="triangle"></span><span id="startLabel" role="status">正在加载城市…</span><span class="arrow">↗</span></button><button class="secondary" id="help">操作指南 <span>?</span></button></div></div>
 <div class="radiocard"><div class="radioicon">◉</div><div><small>本地电台</small><strong>PACIFIC FM <i>98.6</i></strong></div><div class="bars"><b></b><b></b><b></b><b></b><b></b></div></div>
 <footer><span><i></i> 海滨大道 <b>/</b> OCEAN DRIVE</span><span>自由漫游 <b>·</b> 单人游戏</span></footer></main>
 <section id="hud"><div class="mission"><small id="missionLabel">城市委托</small><strong id="missionName"></strong><p id="missionHint"></p></div><div class="nav"><button id="miniButton" title="打开地图" aria-label="打开地图"><canvas id="mini" width="244" height="244"></canvas></button><div class="street" id="street"></div></div><div class="identity"><span id="cash"></span><span id="wanted" aria-live="polite"></span></div><div class="meter"><small id="vehicleLabel"></small><strong id="speed">000</strong><span id="unit">KM/H</span></div><div class="keyhint" id="keyhint"></div><div id="touch">
  <div id="stick" aria-label="移动摇杆"><span class="stickKnob"></span></div>
  <div id="touchActions">
-  <button id="touchRun" data-pedal="sprint">奔跑</button><button id="touchTalk">交谈</button><button id="touchStrike">出拳</button><button id="touchEnter">上车</button>
+  <button id="touchArm">持枪</button><button id="touchRun" data-pedal="sprint">奔跑</button><button id="touchTalk">交谈</button><button id="touchStrike">出拳</button><button id="touchEnter">上车</button>
   <button data-pedal="brake" hidden>手刹</button><button data-pedal="reverse" hidden>倒车</button><button data-pedal="gas" hidden>油门</button>
  </div></div></section>
 <div id="notice" role="status"></div>
 <div class="veil" id="dialog" hidden><section class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle"><button class="close" id="close" aria-label="关闭">×</button><small id="panelTag"></small><h2 id="panelTitle"></h2><div id="panelBody"></div></section></div><div id="error" role="alert" hidden>浏览器未能启动 WebGL 2。请启用硬件加速，并在新版 Chrome、Edge 或 Safari 中重新打开游戏。</div>
-<script>var s=document.createElement("script");s.src=document.documentElement.dataset.input==="touch"?"./mobile-EPQKIDKK.js":"./city-GHNGBYJG.js";s.onerror=function(){var b=document.getElementById("start");b.disabled=false;document.getElementById("startLabel").textContent="重新加载城市";b.onclick=function(){location.reload()}};document.body.appendChild(s);</script></body></html>
+<script>var s=document.createElement("script");s.src=document.documentElement.dataset.input==="touch"?"./mobile-U6UBIZV3.js":"./city-M4MX3N5V.js";s.onerror=function(){var b=document.getElementById("start");b.disabled=false;document.getElementById("startLabel").textContent="重新加载城市";b.onclick=function(){location.reload()}};document.body.appendChild(s);</script></body></html>
