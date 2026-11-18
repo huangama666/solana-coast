@@ -43,3 +43,4 @@ https://polyhaven.com/a/kloppenheim_06_puresky
 
 Palm Tree Bark by Poly Haven, CC0. https://polyhaven.com/a/palm_tree_bark
 The waterfront frontage atlas and cutout palm frond are original AI-generated texture artwork. Buildings use displaced facade segments and instanced curved leaf geometry.
+The additional six neighborhood elevations are original AI-generated texture artwork for the motel, bakery, record store, marine warehouse, pharmacy and apartment building.

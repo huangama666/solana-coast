@@ -110,8 +110,56 @@ body[data-travel=ride] #touchStrike{grid-column:1;grid-row:1}
 .marketBalance{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-block:1px solid #ffffff26;color:#aee5cf;font-weight:700}
 .marketItem{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;gap:5px 12px;width:100%;padding:15px 10px;background:transparent;border:0;border-bottom:1px solid #ffffff22;color:#fff1d9}
 .marketItem small{grid-column:1;color:#c9c7bf}.marketItem b{grid-area:1/2/3/3;color:#ffbb8b}.marketItem:disabled{opacity:.49}.marketItem:hover:enabled{background:#ffffff0c}
+
+body[data-loading]{background:#111321}
+body[data-loading]>:not(#loadingGate):not(script){visibility:hidden!important}
+#loadingGate{position:fixed;inset:0;z-index:1000;isolation:isolate;overflow:hidden;display:grid;align-items:end;padding:clamp(32px,9vh,105px) max(7vw,env(safe-area-inset-right)) max(9vh,calc(env(safe-area-inset-bottom) + 20px)) max(7vw,env(safe-area-inset-left));color:#fff3dd;background:radial-gradient(ellipse at 73% 52%,#ad686a 0%,transparent 43%),linear-gradient(163deg,#111528 9%,#39354a 48%,#8f636a 72%,#252538)}
+#loadingGate[hidden],#loadRetry[hidden]{display:none}
+.loadScenery,.loadSkyline,.loadWater{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.loadScenery{overflow:hidden}.loadSun{position:absolute;left:73%;top:52%;width:clamp(95px,17vmin,210px);aspect-ratio:1;transform:translate(-50%,-53%);border-radius:50%;background:linear-gradient(#ffe9b5,#ffc483 64%,#f99483);box-shadow:0 0 60px 15px #ffba816b;mask-image:linear-gradient(#000 0% 69%,transparent 69% 71%,#000 71% 78%,transparent 78% 82%,#000 82% 88%,transparent 88% 94%,#000 94%)}
+.loadSkyline{top:46%;bottom:32%;background:linear-gradient(#393746,#2a2939);clip-path:polygon(0 67%,5% 67%,5% 53%,8% 53%,8% 68%,13% 68%,13% 38%,17% 38%,17% 65%,22% 65%,22% 51%,26% 51%,26% 70%,32% 70%,32% 47%,36% 47%,36% 63%,42% 63%,42% 48%,45% 48%,45% 27%,48% 27%,48% 59%,52% 59%,52% 43%,56% 43%,56% 65%,61% 65%,61% 56%,65% 56%,65% 78%,72% 78%,72% 68%,78% 68%,78% 84%,83% 84%,83% 63%,87% 63%,87% 75%,92% 75%,92% 49%,97% 49%,97% 68%,100% 68%,100% 100%,0 100%)}
+.loadWater{top:67%;background:linear-gradient(180deg,#383441 0,#252737 13%,#171b28 50%,#121623 100%);border-top:1px solid #e6abb781}
+.loadCard{width:min(490px,100%);text-shadow:0 2px 15px #17142766}.loadPlace{font:700 11px/1.3 ui-monospace,monospace;letter-spacing:.24em;color:#f7d9b6;display:flex;align-items:center;gap:10px}.loadPlace i{width:23px;height:2px;background:#ffbc82}
+.loadTitle{font:900 clamp(46px,8vw,105px)/1.04 'Arial Black','PingFang SC',sans-serif;letter-spacing:-.065em;margin:12px 0 clamp(20px,4vh,42px)}.loadTitle em{font-style:normal;color:#ffe2ba}
+.loadReadout{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:13px;letter-spacing:.06em}.loadReadout strong{font:700 22px/1.1 ui-monospace,monospace;color:#fff0cd;font-variant-numeric:tabular-nums}
+.loadTrack{height:7px;margin:11px 0 7px;background:#ffffff22;position:relative;border-radius:8px}.loadTrack:after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 2px),#302b3a99 calc(10% - 2px) 10%);pointer-events:none}
+#loadFill{position:absolute;inset:0;transform-origin:left;transform:scaleX(0);transition:transform .16s ease-out;border-radius:inherit;background:linear-gradient(90deg,#db777f,#ffa27e 60%,#ffe7b3);box-shadow:0 0 15px #ffad8480}
+.loadTrack:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#f6dfbc44,transparent);background-size:22% 100%;background-repeat:no-repeat;animation:loadScan 1.4s linear infinite}
+#loadDetail{display:block;min-height:16px;letter-spacing:.07em;color:#d8c9bb;font:11px/1.45 ui-monospace,monospace}#loadRetry{margin-top:12px;padding:10px 22px;border:1px solid #e6bca6;border-radius:7px;background:#653f47;color:#fff4dc}
+@keyframes loadScan{from{background-position:-30% 0}to{background-position:130% 0}}
+@media(prefers-reduced-motion:reduce){.loadTrack:before{animation:none}#loadFill{transition:none}}
+@media(max-height:470px){#loadingGate{padding-bottom:7vh}.loadTitle{font-size:48px;margin:6px 0 14px}}
 </style></head>
-<body data-screen="menu">
+<body data-screen="menu" data-loading>
+<section id="loadingGate" aria-label="城市加载">
+ <div class="loadScenery" aria-hidden="true"><div class="loadSun"></div><div class="loadSkyline"></div><div class="loadWater"></div></div>
+ <div class="loadCard"><div class="loadPlace"><i></i> SOLANA COAST</div><div class="loadTitle">GTA <em>AI 版</em></div>
+ <div class="loadReadout"><span id="loadStatus" role="status">正在启动引擎</span><strong id="loadPercent">0%</strong></div>
+ <div class="loadTrack" id="loadTrack" role="progressbar" aria-label="城市加载进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="loadFill"></div></div>
+ <span id="loadDetail"></span><button id="loadRetry" hidden type="button">重新加载</button></div>
+</section>
+<script>
+window.cityBoot=(function(){
+ const gate=document.getElementById('loadingGate'),status=document.getElementById('loadStatus'),detail=document.getElementById('loadDetail'),retry=document.getElementById('loadRetry'),track=document.getElementById('loadTrack');
+ let last=0,failed=false;
+ retry.onclick=()=>location.reload();
+ function progress(value,label,info){
+  if(failed)return;
+  last=Math.max(last,Math.min(100,value));document.getElementById('loadPercent').textContent=last+'%';
+  document.getElementById('loadFill').style.transform='scaleX('+last/100+')';
+  track.setAttribute('aria-valuenow',String(last));if(status.textContent!==label)status.textContent=label;detail.textContent=info||'';
+ }
+ function fail(message){
+  if(!document.body.hasAttribute('data-loading')||failed)return;
+  failed=true;gate.dataset.failed='true';status.textContent=message||'城市载入中断';detail.textContent='';retry.hidden=false;
+ }
+ window.addEventListener('error',e=>{if(e.message&&e.target===window)fail()});
+ return {progress,fail,get failed(){return failed},reveal(){
+  if(failed)return;delete document.body.dataset.loading;gate.hidden=true;
+ }};
+})();
+</script>
+
 <canvas id="world" aria-label="GTA AI 版三维开放世界"></canvas><div class="shade"></div>
 <header><div class="brand"><svg viewBox="0 0 47 35" width="45" height="36" aria-hidden="true"><g fill="currentColor"><path d="M4 19a17 17 0 0 1 34 0zM1 22h43l-3 3H4zm5 6h32l-4 3H10z"/><path d="m23 13 8-7-4 9z" fill="#22202d"/></g></svg><span>SOLANA <b>INTERACTIVE</b></span></div><div class="toolbar"><button id="sound" title="电台声音" aria-label="开启电台" aria-pressed="false">♫</button><button id="full" title="全屏" aria-label="全屏">⛶</button><button id="view" class="onlyplay" aria-label="切换视角">视角</button><button id="market" class="onlyplay" title="便利店 (B)" aria-label="便利店">商店</button><button id="garage" class="onlyplay" title="私人车库 (U)" aria-label="私人车库">车库</button><button id="pause" class="onlyplay" title="暂停" aria-label="暂停">Ⅱ</button></div></header>
 <main id="menu"><div class="titleblock"><div class="kicker"><i></i> 开放世界动作游戏</div><h1><span>GTA</span> <em>AI 版</em></h1><div class="actions"><button class="primary" id="start" disabled><span class="triangle"></span><span id="startLabel" role="status">正在加载城市…</span><span class="arrow">↗</span></button><button class="secondary" id="help">操作指南 <span>?</span></button></div></div>
@@ -125,4 +173,4 @@ body[data-travel=ride] #touchStrike{grid-column:1;grid-row:1}
  </div></div></section>
 <div id="notice" role="status"></div>
 <div class="veil" id="dialog" hidden><section class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle"><button class="close" id="close" aria-label="关闭">×</button><small id="panelTag"></small><h2 id="panelTitle"></h2><div id="panelBody"></div></section></div><div id="error" role="alert" hidden>浏览器未能启动 WebGL 2。请启用硬件加速，并在新版 Chrome、Edge 或 Safari 中重新打开游戏。</div>
-<script>var s=document.createElement("script");s.src=document.documentElement.dataset.input==="touch"?"./mobile-CDZFU24P.js":"./city-AGWGOUXH.js";s.onerror=function(){var b=document.getElementById("start");b.disabled=false;document.getElementById("startLabel").textContent="重新加载城市";b.onclick=function(){location.reload()}};document.body.appendChild(s);</script></body></html>
+<script>var s=document.createElement("script");s.src=document.documentElement.dataset.input==="touch"?"./mobile-5T6EOBCT.js":"./city-NV76MKU3.js";s.onerror=function(){window.cityBoot.fail("游戏引擎载入失败")};document.body.appendChild(s);</script></body></html>
