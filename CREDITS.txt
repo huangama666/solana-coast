@@ -29,3 +29,17 @@ KayKit Character Animations 1.1 by Kay Lousberg, CC0 1.0, https://kaylousberg.co
 The unarmed punch, hit and fall clips were retargeted to both character rigs as needed. Movement, blending, trajectory, floor contact, finger and wrist adjustments are implemented by the game.
 
 Private coupe livery: mascot artwork supplied by the project owner. Adapted as a transparent in-game decal.
+
+Street scenery: Cinema, City Block Filler and Luxury Beach House by Grab3D, CC0. Models reduced, resized and instanced for this project.
+https://grab3d.com/models/buildings/cinema/
+https://grab3d.com/models/buildings/city-block-filler/
+https://grab3d.com/models/buildings/luxury-beach-house/
+Facade001 and Facade018A by ambientCG, CC0. Repacked surface maps used for the district facades.
+https://ambientcg.com/view?id=Facade001
+https://ambientcg.com/view?id=Facade018A
+White Plaster 02 and Kloppenheim 06 Pure Sky by Poly Haven, CC0. Plaster colour and normals, resized HDR environment lighting.
+https://polyhaven.com/a/white_plaster_02
+https://polyhaven.com/a/kloppenheim_06_puresky
+
+Palm Tree Bark by Poly Haven, CC0. https://polyhaven.com/a/palm_tree_bark
+The waterfront frontage atlas and cutout palm frond are original AI-generated texture artwork. Buildings use displaced facade segments and instanced curved leaf geometry.
