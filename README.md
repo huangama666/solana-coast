@@ -1,4 +1,4 @@
-# 日落海岸 · Solana Coast
+# GTA AI 版
 
 [打开游戏](https://huangama666.github.io/solana-coast/) · [下载独立离线版](https://huangama666.github.io/solana-coast/offline.html)
 
