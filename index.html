@@ -89,6 +89,20 @@ html[data-input=touch] footer{bottom:env(safe-area-inset-bottom);left:var(--left
 body[data-travel=foot] #touchRun{grid-column:3;grid-row:1}
 body[data-travel=foot] :is(#touchTalk,#touchStrike,#touchEnter){grid-row:2}
 html[data-input=touch] body[data-travel=foot] .meter{bottom:calc(var(--bottom) + 108px)}
+.liveryEditor{border-top:1px solid #63837270;margin-top:14px;color:#e9e9d9}
+.liveryEditor summary{cursor:pointer;padding:13px 2px;color:#f6c398;font-size:14px;font-weight:750;width:fit-content}
+.liveryForm{padding:2px 0 4px;display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:12px 18px}
+.liveryField>label{display:block;color:#bbc7bf;font-size:12px;margin-bottom:7px;font-weight:700}
+.liveryInputRow,.liveryFileRow,.liveryFileRow>div,.liverySaveRow{display:flex;align-items:center;gap:6px}
+.liveryInputRow input{width:100%;min-width:0;max-width:285px;height:42px;padding:7px 10px;border-radius:4px;border:1px solid #70887c;background:#192225;color:#fbf3df;font:inherit;font-size:16px;user-select:text;-webkit-user-select:text}
+.liveryInputRow input::placeholder{color:#9cacaa}
+.liveryForm button,.stickerPicker{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:5px 9px;border:1px solid #678076;border-radius:4px;font:inherit;font-size:12px;font-weight:650;background:#283533;white-space:nowrap;color:#f2ebda}
+.liveryForm button:disabled{opacity:.45;cursor:default}.stickerPicker{position:relative;overflow:hidden;cursor:pointer}
+.stickerPicker:focus-within{outline:2px solid #efb581}.stickerPicker input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.stickerThumb{object-fit:contain;width:43px;height:43px;border:1px solid #63786c;background:#293532;border-radius:5px}
+.liverySaveRow{grid-column:1/-1}.liveryForm .saveLivery{background:#edaf83;color:#302822;border-color:transparent}
+.liveryStatus{font-size:12px;color:#d9deb0}
+@media(max-width:650px){.liveryForm{grid-template-columns:1fr}.liveryForm button,.stickerPicker{min-height:44px}.liveryEditor summary{min-height:44px}.liveryEditor{margin-top:10px}}
 </style></head>
 <body data-screen="menu">
 <canvas id="world" aria-label="日落海岸三维开放世界"></canvas><div class="shade"></div>
@@ -104,4 +118,4 @@ html[data-input=touch] body[data-travel=foot] .meter{bottom:calc(var(--bottom) +
  </div></div></section>
 <div id="notice" role="status"></div>
 <div class="veil" id="dialog" hidden><section class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle"><button class="close" id="close" aria-label="关闭">×</button><small id="panelTag"></small><h2 id="panelTitle"></h2><div id="panelBody"></div></section></div><div id="error" role="alert" hidden>浏览器未能启动 WebGL 2。请启用硬件加速，并在新版 Chrome、Edge 或 Safari 中重新打开游戏。</div>
-<script>var s=document.createElement("script");s.src=document.documentElement.dataset.input==="touch"?"./mobile-TWEZ7J72.js":"./city-XG7HPSBB.js";s.onerror=function(){var b=document.getElementById("start");b.disabled=false;document.getElementById("startLabel").textContent="重新加载城市";b.onclick=function(){location.reload()}};document.body.appendChild(s);</script></body></html>
+<script>var s=document.createElement("script");s.src=document.documentElement.dataset.input==="touch"?"./mobile-DPRJLMLH.js":"./city-6ZLFVB2Z.js";s.onerror=function(){var b=document.getElementById("start");b.disabled=false;document.getElementById("startLabel").textContent="重新加载城市";b.onclick=function(){location.reload()}};document.body.appendChild(s);</script></body></html>
