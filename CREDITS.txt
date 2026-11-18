@@ -27,3 +27,5 @@ https://polyhaven.com/a/wood_planks_dirt
 The sky is tone-mapped for offline rendering. Ground material images were resized and recompressed.
 KayKit Character Animations 1.1 by Kay Lousberg, CC0 1.0, https://kaylousberg.com/game-assets/character-animations
 The unarmed punch, hit and fall clips were retargeted to both character rigs as needed. Movement, blending, trajectory, floor contact, finger and wrist adjustments are implemented by the game.
+
+Private coupe livery: mascot artwork supplied by the project owner. Adapted as a transparent in-game decal.
