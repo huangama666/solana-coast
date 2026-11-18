@@ -1,0 +1,29 @@
+Solana Coast · Character assets
+Alan uses Casual Man, https://grab3d.com/models/characters/man/
+Luna uses Casual Woman, https://grab3d.com/models/characters/woman/
+Original rigged models, materials and walk/run animations by Grab3D.
+CC0 1.0 Universal, https://creativecommons.org/publicdomain/zero/1.0/
+The author describes the original meshes and textures as AI-assisted and refined in Blender.
+Game adaptations: mesh simplification, resized PBR textures, runtime poses and distance-based detail.
+
+Vehicles and coastal architecture
+Ferrari 458 Italia by vicent091036, https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6
+GLB conversion distributed with the three.js car example, https://threejs.org/examples/webgl_materials_car.html
+CC Attribution, https://creativecommons.org/licenses/by/4.0/
+Game adaptations include mesh reduction, material changes, working wheel pivots, an animated driver and an arcade driving model.
+Motorcycle, Motorboat, Restaurant, General Store and Lifeguard Tower by Grab3D, CC0 1.0.
+https://grab3d.com/models/vehicles/motorcycle/
+https://grab3d.com/models/vehicles/motorboat/
+https://grab3d.com/models/buildings/restaurant/
+https://grab3d.com/models/buildings/general-store/
+https://grab3d.com/models/buildings/lifeguard-tower/
+Game adaptations include compressed geometry, new paint, teak and metal finishes, controls and static collision footprints.
+Poly Haven, CC0 1.0. Kloppenheim 06 Pure Sky, Aerial Asphalt 01, Coast Sand 01, Concrete Pavement and Wood Planks Dirt.
+https://polyhaven.com/a/kloppenheim_06_puresky
+https://polyhaven.com/a/aerial_asphalt_01
+https://polyhaven.com/a/coast_sand_01
+https://polyhaven.com/a/concrete_pavement
+https://polyhaven.com/a/wood_planks_dirt
+The sky is tone-mapped for offline rendering. Ground material images were resized and recompressed.
+KayKit Character Animations 1.1 by Kay Lousberg, CC0 1.0, https://kaylousberg.com/game-assets/character-animations
+The unarmed punch, hit and fall clips were retargeted to both character rigs as needed. Movement, blending, trajectory, floor contact, finger and wrist adjustments are implemented by the game.
