@@ -4,7 +4,7 @@ Luna uses Casual Woman, https://grab3d.com/models/characters/woman/
 Original rigged models, materials and walk/run animations by Grab3D.
 CC0 1.0 Universal, https://creativecommons.org/publicdomain/zero/1.0/
 The author describes the original meshes and textures as AI-assisted and refined in Blender.
-Game adaptations: mesh simplification, resized PBR textures, runtime poses and distance-based detail.
+Game adaptations: mesh simplification, resized PBR textures, runtime poses and distance-based detail. The playable character has refitted lower-body walk/run tracks and phase-aligned transitions made from the original clips.
 
 Vehicles and coastal architecture
 Ferrari 458 Italia by vicent091036, https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6
